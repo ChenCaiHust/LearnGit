@@ -45,3 +45,8 @@ git commit -m "xxxxx"
 git mv file_from file_to
 git commit *****
 可选择的另外一种操作模式： 先copy文件，修改copy后的文件名到理想的文件名，删除old文件，add new文件，最后再提交
+
+查看提交历史
+git log ：提交历史大致示意图
+git log -p ：提交历史及对应修改的内容
+git log -2： 最近两次的提交
