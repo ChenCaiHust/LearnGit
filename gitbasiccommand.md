@@ -29,3 +29,19 @@ git diff --staged：显示的是暂存区中的文件与上次提交后仓库中
 提交命令
 git commit -m "commit subject"
 用来提交暂存区的内容到git仓库，记住，是暂存区中的内容到仓库，不是工作内容的文件内容到仓库，没有加入到暂存区的文件是不会被提交的，忘记的只好下次再提交了。
+
+移除文件
+git 仓库不想再跟踪某文件时，这时，需要运行git rm 命令来从暂存区中移除对文件的跟踪，在下次运行git commit命令后记录进行git 仓库，从此不再跟踪删除文件的更新
+git rm filename
+git commit -m "rm filename"
+git rm filename的运行结果：删除在本地磁盘上的文件，再从暂存区移除此对此文件的跟踪
+如果filename已经修改过且提交至暂存区了，上述命令执行不成功，如果仍然想要执行成功，需要加上-f参数：git rm filename -f
+如果只想不再跟踪filename文件，但是不想把filename从本地磁盘上删除，那么需要用下列的两个命令：
+git rm --cached filename
+git commit -m "xxxxx"
+这样后，filename将不会再被跟踪了，但是仍然在磁盘上，如果此文件没有在.gitignore列表中，那么此文件会处于未跟踪状态，如果处于.gitignore列表中，则在运行git status命令时，不会显示在未跟踪文件列表中。
+
+更改文件名
+git mv file_from file_to
+git commit *****
+可选择的另外一种操作模式： 先copy文件，修改copy后的文件名到理想的文件名，删除old文件，add new文件，最后再提交
