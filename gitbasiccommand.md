@@ -51,6 +51,17 @@ git log ：提交历史大致示意图
 git log -p ：提交历史及对应修改的内容
 git log -2： 最近两次的提交
 
+
 撤消操作
-撤消最近的一次的注释
-git commit 
+如果提交后想修改最近一次提交的注释，可以用下面的命令来执行：
+git commit --atend
+如果提交后有未提交到暂存区的已修改文件，用下面的过程来执行：
+git add forggtenfile
+git commit --atend 
+在输入新的提交信息后，后面一次提交的注释信息会覆盖掉前一次的提交注释信息。
+
+撤消暂存区中的文件
+git reset HEAD filename： filename是处于暂存状态，执行完成后，filename处于修改但未暂存状态
+
+撤消修改文件但是未提交状态的文件修改：
+git checkout filename
