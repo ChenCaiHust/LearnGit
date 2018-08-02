@@ -1,0 +1,11 @@
+#ignore all .o, .a file
+*.[oa]
+
+#ignore all end of ~file name
+*~
+
+#ignore all pdf file in the doc directory, but the doc/server/*.pdf will not ignore
+doc/*.pdf
+
+#ignore all pdf files in the doc directory  and doc subdirectory
+doc/**/*.pdf
