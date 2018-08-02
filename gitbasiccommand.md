@@ -65,3 +65,51 @@ git reset HEAD filename： filename是处于暂存状态，执行完成后，fil
 
 撤消修改文件但是未提交状态的文件修改：
 git checkout filename
+
+打标签
+为什么需要打标签？
+因为在某些情况下，我们需要一些标识来标识某些重要的阶段性成果会对重要的东西做标记，比如，在重大版本发布功能开发完成后，需要对此版本进行一个标识，标识V1.0类似的功能。也可能是重要的bug修复，进行备忘，所以，需要有打标签的功能。
+
+git 标签有两类：一类是附注标签，一类是轻标签，轻标签就是一个某次提交的sha引用，而附注标签则可以进行多方面的信息记录，一般建议打附注标签
+
+查看当前仓库中有哪些标签？
+git tag
+
+在当前位置新建附注标签
+git tag -a v1.0 -m "version 1.0"
+
+在当前位置建立新轻量标签
+git tag v2.0
+
+查看标签的具体信息
+git show tag-name
+
+后期打标签，也就是在过去提交的记录中想打标签，如何操作？
+git log --pretty=oneline
+67940cd6f8f8c5ce8bd6cb855a0afe26f6a0210c git reset and git checkout command
+6ce5d1912b4306a90cbff472c7352e58f4266fa4 modify gitbasiccommand.md
+cdaf2c78a8596841f014e41d07ff4ec1b8a059b1 git log command and add project.md file
+a15cdab387391f4b1fa5041e3320c5f0a55ebff5 add project file
+00c06d14eb448eb02601558f588e789d2606480c git rm and git mv command
+9907968c5210dc2da80d9608658abc750dd47320 modify file name
+e01d8062735d4c77593e82cdcd19ddaec427a441 test git rm --cached command
+4f62681838aa51f5a4df36a82fe56c47ee25c9a9 add project.md file
+3cfffdf986232fec53f3b3f3d145c093e3da1dbd delete project.md
+33bad872ff5641e6ff653a26888ce5e2de741a48 add project.md file
+ee5fa80767e97c38adcb3ca64fd2439640d3509f git commit command
+a7558775140784b8bb088a435aa060d3083c1e37 git add and git diff command
+44abdbbb6916fc1479b87c3de88eb315731807ea add ignore file
+203737a76cd360dfc81ff0d76c92d4996f2b5b05 git basic concept
+
+在git basic concept位置打版本v0.1标签
+git tag -a v0.1 203737 -m "init version of git learning"
+
+推送标签到远程仓库
+push操作并不会推送tag到远程仓库，需要用命令来操作
+推送某版本的tag到远程仓库
+git push origin v1.0
+推送所有标签到远程仓库
+git push origin --tags
+检出标签
+git checkout -b version1.0 v1.0
+
