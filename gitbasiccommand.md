@@ -113,3 +113,15 @@ git push origin --tags
 检出标签
 git checkout -b version1.0 v1.0
 
+同步本地仓库到远程仓库
+添加远程仓库
+git remote add origin https://github.com/ChenCaiHust/LearnGit.git
+origin是远程仓库的别名，一般默认为origin，https://github.com/ChenCaiHust/LearnGit.git是远程仓库的地址
+推送到远程仓库：
+git push -u origin master
+
+注意：如果是git init初始化一个本地仓库，那么一般需要先设定好远程仓库的地址，初始化一个新的仓库，里面是空的，对于用github作为远程仓库而言，新建一个仓库时全部用默认的内容就可以了，不要加readme.md和licence.txt等文件，否则执行上述两个命令不会成功，会出问题。
+
+查看远程仓库
+git remote： 会显示简单的信息
+git remote -v : 会显示更具体的信息
