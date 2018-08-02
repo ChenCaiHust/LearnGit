@@ -50,3 +50,7 @@ git commit *****
 git log ：提交历史大致示意图
 git log -p ：提交历史及对应修改的内容
 git log -2： 最近两次的提交
+
+撤消操作
+撤消最近的一次的注释
+git commit 
