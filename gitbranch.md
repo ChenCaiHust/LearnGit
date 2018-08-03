@@ -8,6 +8,6 @@ git 分支管理原理：git每次提交会有一个提交对象，提交对象�
 > git branch : 查看当前本地的分支，当前所在的分支前面有×号
 
 ### 切换分支
-> git checkout newbranchname : 切换HEAD指针指向newbranchname
+> git checkout newbranchname : 切换HEAD指针指向newbranchname,且将工作目录切换到分支newbranchname所在的状态，如果git不能干净地完成此任务，那么切换会失败，如当前分支有内容提交的暂存区但没有提交的git仓库等情况
 
 ### 
